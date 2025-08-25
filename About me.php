@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Michael Montes | Portfolio</title>
+  <title>John Michael Montes</title>
   <link rel="stylesheet" href="aboutme.css">
 </head>
 <body>
