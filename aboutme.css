@@ -17,7 +17,7 @@ a {
 /* Smooth Scroll */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 60px; /* Prevent overlap when clicking nav links */
+  scroll-padding-top: 60px;
 }
 
 /* Sidebar Navigation */
@@ -27,7 +27,7 @@ html {
   left: 0;
   width: 260px;
   height: 100%;
-  background-color: #111827; /* darker than main for contrast */
+  background-color: #111827;
   color: #eaeaea;
   padding: 40px 20px;
   box-shadow: 4px 0 15px rgba(0,0,0,0.5);
@@ -57,8 +57,6 @@ html {
 .sidebar .nav-links {
   list-style: none;
   width: 100%;
-  padding: 0;
-  margin: 0;
 }
 
 .sidebar .nav-links li {
@@ -70,18 +68,16 @@ html {
   padding: 12px 15px;
   font-size: 16px;
   color: #eaeaea;
-  background: #1a1a2e;       /* Box background */
-  border-radius: 10px;        /* Rounded corners */
-  text-decoration: none;
+  background: #1a1a2e;
+  border-radius: 10px;
   transition: background 0.3s, transform 0.3s;
 }
 
 .sidebar .nav-links a:hover {
-  background: #0f3460;        /* Hover background */
+  background: #0f3460;
   color: #e94560;
-  transform: translateX(5px); /* Slide effect */
+  transform: translateX(5px);
 }
-
 
 /* Main Content */
 .main-content {
@@ -92,7 +88,7 @@ html {
 
 /* Section Styles */
 section {
-  margin-bottom: 120px; /* Extra gap between sections */
+  margin-bottom: 120px;
   background-color: #1a1a2e; 
   padding: 30px;
   border-radius: 12px;
@@ -124,14 +120,14 @@ section ul li {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-  justify-content: center; /* Centers last row with fewer items */
+  justify-content: center;
 }
 
 .skill-card {
   background: #16213e;
   border-radius: 12px;
   padding: 20px;
-  flex: 1 1 calc(33.33% - 20px); /* 3 per row */
+  flex: 1 1 calc(33.33% - 20px);
   max-width: calc(33.33% - 20px);
   text-align: center;
   transition: transform 0.3s ease, background 0.3s ease;
