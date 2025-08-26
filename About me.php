@@ -25,7 +25,7 @@
     </ul>
   </nav>
 
-  <!-- Main Content -->
+
   <main class="main-content">
       
     <!-- About Section -->
