@@ -143,3 +143,67 @@ function handleSwipe() {
     showPrevCertificate();
   }
 }
+
+// Cursor Light Effect
+document.addEventListener('DOMContentLoaded', function() {
+  const cursorLight = document.getElementById('cursorLight');
+  
+  // Only initialize if cursor light element exists
+  if (!cursorLight) return;
+  
+  let mouseX = 0;
+  let mouseY = 0;
+  let cursorX = 0;
+  let cursorY = 0;
+  
+  // Create a smoother animation with requestAnimationFrame
+  function animateCursor() {
+    // Calculate distance to move (easing effect)
+    const dx = (mouseX - cursorX) * 0.1;
+    const dy = (mouseY - cursorY) * 0.1;
+    
+    // Update position if movement is significant
+    if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+      cursorX += dx;
+      cursorY += dy;
+      cursorLight.style.left = cursorX + 'px';
+      cursorLight.style.top = cursorY + 'px';
+    }
+    
+    requestAnimationFrame(animateCursor);
+  }
+  
+  // Start the animation
+  animateCursor();
+  
+  // Track mouse movement
+  document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  // Hide cursor light when mouse leaves window
+  document.addEventListener('mouseleave', function() {
+    cursorLight.style.opacity = '0';
+  });
+  
+  // Show cursor light when mouse enters window
+  document.addEventListener('mouseenter', function() {
+    cursorLight.style.opacity = '1';
+  });
+  
+  // Add interactive effects to elements
+  const interactiveElements = document.querySelectorAll(
+    'a, button, .certificate-card, .skill-card, .nav-links a'
+  );
+  
+  interactiveElements.forEach(function(el) {
+    el.addEventListener('mouseenter', function() {
+      cursorLight.classList.add('interactive');
+    });
+    
+    el.addEventListener('mouseleave', function() {
+      cursorLight.classList.remove('interactive');
+    });
+  });
+});

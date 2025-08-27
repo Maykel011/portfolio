@@ -339,3 +339,51 @@ section ul li {
     height: 40px;
   }
 }
+
+/* Cursor Light Effect */
+.cursor-light {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+background: radial-gradient(circle, rgba(100, 255, 218, 0.1) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  will-change: transform;
+  display: block;
+}
+
+body:hover .cursor-light {
+  opacity: 1;
+}
+
+/* Interactive elements highlight */
+.cursor-light.interactive {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle,
+    rgba(233, 69, 96, 0.15) 0%,
+    rgba(233, 69, 96, 0.08) 40%,
+    transparent 70%
+  );
+}
+
+/* Reduce effect on mobile devices */
+@media (max-width: 768px) {
+  .cursor-light {
+    display: none;
+  }
+}
+
+/* Ensure modal is above cursor light */
+.modal {
+  z-index: 10000;
+}
+
+.sidebar {
+  z-index: 10000;
+}

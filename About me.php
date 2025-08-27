@@ -137,6 +137,9 @@
     </div>
   </div>
 
+    <!-- Cursor Light Effect -->
+  <div class="cursor-light" id="cursorLight"></div>
+  
     <script src="javascript.js"></script>
 </body>
 </html>
