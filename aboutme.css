@@ -136,9 +136,8 @@ section ul li {
 }
 .skill-card:hover {
   transform: translateY(-6px);
-  background: #1a1a2e;
+  background: #e94560;
 }
-
 
 /* Certificates Section */
 .certificates-container {
@@ -154,12 +153,15 @@ section ul li {
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
 .certificate-card img {
   width: 70px;
   height: 70px;
   margin-bottom: 12px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
 .certificate-card p {
@@ -170,19 +172,170 @@ section ul li {
 
 .certificate-card:hover {
   transform: translateY(-6px);
-  background: #1a1a2e;
+  background: #e94560;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.certificate-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+/* All your existing CSS remains the same until the modal section */
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
 }
 
-.certificate-card img {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 12px;
-  border-radius: 12px; /* rounded corners */
-  object-fit: cover;   /* keeps the aspect ratio inside the box */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  margin: 2% auto; /* Reduced margin for larger modal */
+  padding: 20px;
+  width: 95%; /* Increased width */
+  max-width: 1000px; /* Increased max-width */
+  height: 90vh; /* Increased height */
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1001;
+}
+
+.close:hover {
+  color: #e94560;
+}
+
+.modal-body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* PDF Viewer Styles */
+.pdf-container {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#pdfFrame {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Viewer Styles */
+.image-viewer {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal-navigation {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.modal-navigation button {
+  pointer-events: auto;
+  background: rgba(233, 69, 96, 0.8);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.modal-navigation button:hover {
+  background: rgba(233, 69, 96, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+  .main-content {
+    margin-left: 240px;
+    padding: 30px;
+  }
+  .certificates-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+  .sidebar .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .sidebar .nav-links li {
+    margin-bottom: 0;
+  }
+  .sidebar .nav-links a {
+    padding: 8px 12px;
+  }
+  .modal-content {
+    width: 98%;
+    margin: 5% auto;
+    height: 85vh;
+  }
+  .modal-navigation button {
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+  }
 }

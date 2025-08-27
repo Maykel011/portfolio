@@ -82,41 +82,32 @@
       <p><strong>Capstone Project:</strong> Gamified Mathematics Learning through Web Development for Grade 1 Students at Jose Rizal University.</p>
     </section>
 
-  <section id="certificates">
-  <h1>Certificates</h1>
-  <div class="certificates-container">
+     <!-- Certificates Section (UPDATED) -->
+    <section id="certificates">
+      <h1>Certificates</h1>
+      <div class="certificates-container">
+        <div class="certificate-card" data-certificate="comptia-itf">
+          <img src="logo/comtialogo.png" alt="CompTIA ITF+">
+          <p>CompTIA IT Fundamentals (ITF+) Certification</p>
+        </div>
 
-    <div class="certificate-card">
-      <a href="certificates/comptia-itf.pdf" target="_blank">
-        <img src="logo/comtialogo.png" alt="CompTIA ITF+">
-        <p>CompTIA IT Fundamentals (ITF+) Certification</p>
-      </a>
-    </div>
+        <div class="certificate-card" data-certificate="diploma">
+          <img src="logo/JRULOGO.png" alt="BSIT Graduate">
+          <p>Certificate of Completion of BSIT Graduate Course</p>
+          <p>DIPLOMA</p>
+        </div>
 
-    <div class="certificate-card">
-      <a href="certificates/Diploma.jpg" target="_blank">
-        <img src="logo/JRULOGO.png" alt="BSIT Graduate">
-        <p>Certificate of Completion of BSIT Graduate Course</p>
-        <P>DIPLOMA</p>
-      </a>
-    </div>
+        <div class="certificate-card" data-certificate="numbomath">
+          <img src="logo/numbomath.png" alt="Leadership">
+          <p>Certificate of Leadership – Capstone Project</p>
+        </div>
 
-    <div class="certificate-card">
-      <a href="certificates/numbomath.jpg" target="_blank">
-        <img src="logo/numbomath.png" alt="Leadership">
-        <p>Certificate of Leadership – Capstone Project</p>
-      </a>
-    </div>
-
-    <div class="certificate-card">
-      <a href="certificates/MockInterviewMontes.png" target="_blank">
-        <img src="logo/MockInterviewLogo.png" alt="Mock Interview">
-        <p>Certificate of Mock Interview </p>
-      </a>
-    </div>
-
-  </div>
-</section>
+        <div class="certificate-card" data-certificate="mockinterview">
+          <img src="logo/MockInterviewLogo.png" alt="Mock Interview">
+          <p>Certificate of Mock Interview</p>
+        </div>
+      </div>
+    </section>
 
 
     <!-- Experience Section -->
@@ -128,6 +119,24 @@
     </section>
       
   </main>
+  
+   <!-- Certificate Modal (UPDATED) -->
+  <div class="modal" id="certificateModal">
+    <div class="modal-content">
+      <span class="close"></span>
+      <div class="modal-body">
+        <div id="pdfViewer" class="pdf-container">
+          <iframe id="pdfFrame" src="" frameborder="0"></iframe>
+        </div>
+        <img id="modalImage" src="" alt="Certificate" class="image-viewer">
+        <div class="modal-navigation">
+          <button id="prevCert">&#10094;</button>
+          <button id="nextCert">&#10095;</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+    <script src="javascript.js"></script>
 </body>
 </html>
